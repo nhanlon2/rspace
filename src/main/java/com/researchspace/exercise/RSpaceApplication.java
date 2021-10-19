@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RSpaceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RSpaceApplication.class, args);
+
+        SpringApplication.run(RSpaceApplication.class, args
+
+        );
     }
 
 }
