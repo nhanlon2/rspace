@@ -19,33 +19,38 @@ public class RSpaceClient {
     private static final String RSPACE_BASE_URL = "https://demos.researchspace.com/api/inventory/v1/samples";
     private RestTemplate restTemplate;
 
-    public RSpaceClient(RestTemplateBuilder builder){
+    public RSpaceClient(RestTemplateBuilder builder) {
         restTemplate = builder
                 .defaultHeader("apiKey", "X3m7dbnhC443VMdJJKpaB1rnqjdgmrGg")
                 .build();
     }
 
-    public JsonNode getSamples () {
+    public JsonNode getSamples() {
         return restTemplate.getForObject(RSPACE_BASE_URL, JsonNode.class);
     }
 
-    public SampleDetails getSampleByID (String id) {
-        return restTemplate.getForObject(RSPACE_BASE_URL+"/"+ id, SampleDetails.class);
+    public SampleDetails getSampleByID(String id) {
+        SampleDetails sampleDetails = restTemplate.getForObject(RSPACE_BASE_URL + "/" + id, SampleDetails.class);
+        sampleDetails.calculateLocation();
+        return sampleDetails;
     }
 
-    public List<SampleSummary> getSampleSummaries () throws JsonProcessingException {
+    public List<SampleSummary> getSampleSummaries() throws JsonProcessingException {
         SampleResponse response = restTemplate.getForObject(RSPACE_BASE_URL, SampleResponse.class);
         return response.getSamples();
     }
 
-    public List<SampleSummary> getSampleSummariesExpiringWithin (int days) throws JsonProcessingException {
+    public List<SampleSummary> getSampleSummariesExpiringWithin(int days) throws JsonProcessingException {
         SampleResponse response = restTemplate.getForObject(RSPACE_BASE_URL, SampleResponse.class);
         List<SampleSummary> summaries = response.getSamples();
         return summaries.stream().filter(summary -> {
+                    if (summary.getExpiryDate() == null) {
+                        return false;
+                    }
                     LocalDate expiryDate = LocalDate.parse(summary.getExpiryDate());
-                    long diff =ChronoUnit.DAYS.between(LocalDate.now(), expiryDate);
+                    long diff = ChronoUnit.DAYS.between(LocalDate.now(), expiryDate);
                     return diff < days;
-        }
+                }
         ).collect(Collectors.toList());
     }
 

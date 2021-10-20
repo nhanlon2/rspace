@@ -20,24 +20,24 @@ public class RSpaceSamplesController {
 
     private final RSpaceClient client;
 
-    public RSpaceSamplesController(RSpaceClient client){
+    public RSpaceSamplesController(RSpaceClient client) {
         this.client = client;
     }
+
     @GetMapping("/")
     public ResponseEntity<JsonNode> index() {
 
         return ok(client.getSamples());
     }
-    @GetMapping("/sampleSummaries")
-    public ResponseEntity<List<SampleSummary>> summaries() throws JsonProcessingException {
 
+    @GetMapping("/sampleSummaries")
+    public ResponseEntity<List<SampleSummary>> summaries(@RequestParam(name = "expiresInLessThan", required = false) Integer days) throws JsonProcessingException {
+        if (days != null) {
+            return ok(client.getSampleSummariesExpiringWithin(days));
+        }
         return ok(client.getSampleSummaries());
     }
-    @GetMapping("/sampleSummaries/expiry")
-    public ResponseEntity<List<SampleSummary>> summaries(@RequestParam(name = "expiresInLessThan") int days) throws JsonProcessingException {
 
-        return ok(client.getSampleSummariesExpiringWithin(days));
-    }
     @GetMapping("/sampleDetails/{id}")
     public ResponseEntity<SampleDetails> sampleDetails(@PathVariable String id) throws JsonProcessingException {
 

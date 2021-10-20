@@ -15,6 +15,6 @@ public class Container {
     private String name;
     private String description;
     private Location parentLocation;
-    private Container [] parentContainers;
+    private Container[] parentContainers;
 
 }

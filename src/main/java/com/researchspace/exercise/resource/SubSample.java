@@ -12,5 +12,5 @@ import lombok.Setter;
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SubSample {
-    private Container [] parentContainers;
+    private Container[] parentContainers;
 }
