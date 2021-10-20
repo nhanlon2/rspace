@@ -1,0 +1,454 @@
+{
+  "id": 1277964,
+  "globalId": "SA1277964",
+  "name": "Antibody_expired",
+  "description": null,
+  "created": "2021-10-19T12:08:58.000Z",
+  "createdBy": "nhanlon",
+  "lastModified": "2021-10-19T12:08:58.173Z",
+  "modifiedBy": "nhanlon",
+  "modifiedByFullName": "Neil Hanlon",
+  "deleted": false,
+  "deletedDate": null,
+  "revisionId": null,
+  "version": 1,
+  "historicalVersion": false,
+  "iconId": 268,
+  "quantity": {
+    "numericValue": 1,
+    "unitId": 3
+  },
+  "tags": null,
+  "barcode": "",
+  "type": "SAMPLE",
+  "templateId": 163841,
+  "templateVersion": 3,
+  "template": false,
+  "owner": {
+    "id": 3342339,
+    "username": "nhanlon",
+    "email": "neil.hanlon@hotmail.co.uk",
+    "firstName": "Neil",
+    "lastName": "Hanlon",
+    "homeFolderId": 34266,
+    "workbenchId": null,
+    "_links": []
+  },
+  "permittedActions": [
+    "UPDATE",
+    "CHANGE_OWNER"
+  ],
+  "subSampleAlias": "aliquot",
+  "subSamplesCount": 1,
+  "storageTempMin": {
+    "numericValue": 3,
+    "unitId": 8
+  },
+  "storageTempMax": {
+    "numericValue": 5,
+    "unitId": 8
+  },
+  "sampleSource": "LAB_CREATED",
+  "expiryDate": "2021-10-18",
+  "fields": [
+    {
+      "id": 1212479,
+      "globalId": "SF1212479",
+      "name": "Antigen",
+      "type": "string",
+      "content": "",
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 1,
+      "definition": null,
+      "selectedOptions": null,
+      "_links": []
+    },
+    {
+      "id": 1212480,
+      "globalId": "SF1212480",
+      "name": "Peptide",
+      "type": "string",
+      "content": "",
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 2,
+      "definition": null,
+      "selectedOptions": null,
+      "_links": []
+    },
+    {
+      "id": 1212481,
+      "globalId": "SF1212481",
+      "name": "Applicable-species",
+      "type": "choice",
+      "content": null,
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 3,
+      "definition": {
+        "options": [
+          "bovine",
+          "fly",
+          "human",
+          "mouse",
+          "nematode",
+          "rat",
+          "xenopus",
+          "yeast",
+          "zebrafish"
+        ],
+        "multiple": false
+      },
+      "selectedOptions": [],
+      "_links": []
+    },
+    {
+      "id": 1212482,
+      "globalId": "SF1212482",
+      "name": "Clonality",
+      "type": "radio",
+      "content": null,
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 4,
+      "definition": {
+        "options": [
+          "monoclonal",
+          "polyclonal"
+        ],
+        "multiple": false
+      },
+      "selectedOptions": [],
+      "_links": []
+    },
+    {
+      "id": 1212483,
+      "globalId": "SF1212483",
+      "name": "Isotype",
+      "type": "radio",
+      "content": null,
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 5,
+      "definition": {
+        "options": [
+          "IgG",
+          "IgA",
+          "IgD",
+          "IgE",
+          "IgG1",
+          "IgG2",
+          "IgG3",
+          "IgG4",
+          "IgM",
+          "IgY"
+        ],
+        "multiple": false
+      },
+      "selectedOptions": [],
+      "_links": []
+    },
+    {
+      "id": 1212484,
+      "globalId": "SF1212484",
+      "name": "Applications",
+      "type": "choice",
+      "content": null,
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 6,
+      "definition": {
+        "options": [
+          "ChIP",
+          "ELISA",
+          "Flow Cytometry",
+          "Immunocytochemistry",
+          "Immunofluorescence",
+          "Immunohistochemistry",
+          "Western"
+        ],
+        "multiple": false
+      },
+      "selectedOptions": [],
+      "_links": []
+    },
+    {
+      "id": 1212485,
+      "globalId": "SF1212485",
+      "name": "Dilutions",
+      "type": "text",
+      "content": "",
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 7,
+      "definition": null,
+      "selectedOptions": null,
+      "_links": []
+    },
+    {
+      "id": 1212486,
+      "globalId": "SF1212486",
+      "name": "Raised-in",
+      "type": "radio",
+      "content": null,
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 8,
+      "definition": {
+        "options": [
+          "Chicken",
+          "Goat",
+          "Guinea Pig",
+          "Human",
+          "Mouse",
+          "Rabbit",
+          "Rat",
+          "Sheep"
+        ],
+        "multiple": false
+      },
+      "selectedOptions": [],
+      "_links": []
+    },
+    {
+      "id": 1212487,
+      "globalId": "SF1212487",
+      "name": "Reference",
+      "type": "text",
+      "content": "",
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 9,
+      "definition": null,
+      "selectedOptions": null,
+      "_links": []
+    },
+    {
+      "id": 1212488,
+      "globalId": "SF1212488",
+      "name": "Identifier",
+      "type": "text",
+      "content": "",
+      "lastModified": "2021-10-19T12:08:58.175Z",
+      "columnIndex": 10,
+      "definition": null,
+      "selectedOptions": null,
+      "_links": []
+    }
+  ],
+  "extraFields": [],
+  "subSamples": [
+    {
+      "id": 1310751,
+      "globalId": "SS1310751",
+      "name": "Antibody_expired.01",
+      "description": null,
+      "created": "2021-10-19T12:08:58.000Z",
+      "createdBy": "nhanlon",
+      "lastModified": "2021-10-19T12:08:58.176Z",
+      "modifiedBy": "nhanlon",
+      "modifiedByFullName": "Neil Hanlon",
+      "deleted": false,
+      "deletedDate": null,
+      "deletedOnSampleDeletion": false,
+      "revisionId": null,
+      "owner": {
+        "id": 3342339,
+        "username": "nhanlon",
+        "email": "neil.hanlon@hotmail.co.uk",
+        "firstName": "Neil",
+        "lastName": "Hanlon",
+        "homeFolderId": 34266,
+        "workbenchId": null,
+        "_links": []
+      },
+      "permittedActions": [
+        "UPDATE",
+        "CHANGE_OWNER"
+      ],
+      "iconId": -1,
+      "quantity": {
+        "numericValue": 1,
+        "unitId": 3
+      },
+      "tags": null,
+      "barcode": null,
+      "type": "SUBSAMPLE",
+      "parentContainers": [
+        {
+          "id": 1179654,
+          "globalId": "IC1179654",
+          "name": "Neils_Container",
+          "description": "",
+          "created": "2021-10-19T18:49:59.000Z",
+          "createdBy": "nhanlon",
+          "lastModified": "2021-10-19T18:49:59.443Z",
+          "modifiedBy": "nhanlon",
+          "modifiedByFullName": null,
+          "deleted": false,
+          "deletedDate": null,
+          "iconId": -1,
+          "quantity": null,
+          "tags": null,
+          "barcode": null,
+          "type": "CONTAINER",
+          "owner": {
+            "id": 3342339,
+            "username": "nhanlon",
+            "email": "neil.hanlon@hotmail.co.uk",
+            "firstName": "Neil",
+            "lastName": "Hanlon",
+            "homeFolderId": 34266,
+            "workbenchId": null,
+            "_links": []
+          },
+          "permittedActions": [],
+          "locationsCount": null,
+          "contentSummary": {
+            "totalCount": 1,
+            "subSampleCount": 1,
+            "containerCount": 0
+          },
+          "cType": "LIST",
+          "gridLayout": null,
+          "canStoreSamples": true,
+          "canStoreContainers": true,
+          "parentContainers": [
+            {
+              "id": 1179652,
+              "globalId": "BE1179652",
+              "name": "WB nhanlon",
+              "description": null,
+              "created": "2021-10-19T11:54:01.000Z",
+              "createdBy": "nhanlon",
+              "lastModified": "2021-10-19T11:54:01.272Z",
+              "modifiedBy": "nhanlon",
+              "modifiedByFullName": null,
+              "deleted": false,
+              "deletedDate": null,
+              "iconId": -1,
+              "quantity": null,
+              "tags": null,
+              "barcode": null,
+              "type": "CONTAINER",
+              "owner": {
+                "id": 3342339,
+                "username": "nhanlon",
+                "email": "neil.hanlon@hotmail.co.uk",
+                "firstName": "Neil",
+                "lastName": "Hanlon",
+                "homeFolderId": 34266,
+                "workbenchId": null,
+                "_links": []
+              },
+              "permittedActions": [],
+              "locationsCount": null,
+              "contentSummary": {
+                "totalCount": 4,
+                "subSampleCount": 3,
+                "containerCount": 1
+              },
+              "cType": "WORKBENCH",
+              "gridLayout": null,
+              "canStoreSamples": true,
+              "canStoreContainers": true,
+              "parentContainers": [],
+              "parentLocation": null,
+              "lastNonWorkbenchParent": null,
+              "lastMoveDate": null,
+              "attachments": [],
+              "_links": []
+            }
+          ],
+          "parentLocation": {
+            "id": 6560,
+            "coordX": 4,
+            "coordY": 1
+          },
+          "lastNonWorkbenchParent": null,
+          "lastMoveDate": null,
+          "attachments": [],
+          "_links": []
+        },
+        {
+          "id": 1179652,
+          "globalId": "BE1179652",
+          "name": "WB nhanlon",
+          "description": null,
+          "created": "2021-10-19T11:54:01.000Z",
+          "createdBy": "nhanlon",
+          "lastModified": "2021-10-19T11:54:01.272Z",
+          "modifiedBy": "nhanlon",
+          "modifiedByFullName": null,
+          "deleted": false,
+          "deletedDate": null,
+          "iconId": -1,
+          "quantity": null,
+          "tags": null,
+          "barcode": null,
+          "type": "CONTAINER",
+          "owner": {
+            "id": 3342339,
+            "username": "nhanlon",
+            "email": "neil.hanlon@hotmail.co.uk",
+            "firstName": "Neil",
+            "lastName": "Hanlon",
+            "homeFolderId": 34266,
+            "workbenchId": null,
+            "_links": []
+          },
+          "permittedActions": [],
+          "locationsCount": null,
+          "contentSummary": {
+            "totalCount": 4,
+            "subSampleCount": 3,
+            "containerCount": 1
+          },
+          "cType": "WORKBENCH",
+          "gridLayout": null,
+          "canStoreSamples": true,
+          "canStoreContainers": true,
+          "parentContainers": [],
+          "parentLocation": null,
+          "lastNonWorkbenchParent": null,
+          "lastMoveDate": null,
+          "attachments": [],
+          "_links": []
+        }
+      ],
+      "parentLocation": {
+        "id": 6561,
+        "coordX": 1,
+        "coordY": 1
+      },
+      "lastNonWorkbenchParent": null,
+      "lastMoveDate": "2021-10-19T18:50:23.891Z",
+      "attachments": [],
+      "_links": [
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/subSamples/1310751",
+          "rel": "self"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277964/image/1634645338173",
+          "rel": "image"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277964/thumbnail/1634645338173",
+          "rel": "thumbnail"
+        }
+      ]
+    }
+  ],
+  "attachments": [],
+  "_links": [
+    {
+      "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277964/image/1634645338173",
+      "rel": "image"
+    },
+    {
+      "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277964/thumbnail/1634645338173",
+      "rel": "thumbnail"
+    },
+    {
+      "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277964",
+      "rel": "self"
+    },
+    {
+      "link": "https://demos.researchspace.com/api/inventory/v1/sampleTemplates/1277964/icon/268",
+      "rel": "icon"
+    }
+  ]
+}

@@ -5,18 +5,16 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.researchspace.exercise.resource.SampleDetails;
 import com.researchspace.exercise.resource.SampleResponse;
 import com.researchspace.exercise.resource.SampleSummary;
+import org.springframework.boot.jackson.JsonComponent;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-@Component
+@JsonComponent
 public class RSpaceClient {
     private static final String RSPACE_BASE_URL = "https://demos.researchspace.com/api/inventory/v1/samples";
     private RestTemplate restTemplate;

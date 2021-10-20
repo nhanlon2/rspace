@@ -1,0 +1,300 @@
+{
+  "totalHits": 4,
+  "pageNumber": 0,
+  "samples": [
+    {
+      "id": 1277964,
+      "globalId": "SA1277964",
+      "name": "Antibody_expired",
+      "description": null,
+      "created": "2021-10-19T12:08:58.000Z",
+      "createdBy": "nhanlon",
+      "lastModified": "2021-10-19T12:08:58.173Z",
+      "modifiedBy": "nhanlon",
+      "modifiedByFullName": "Neil Hanlon",
+      "deleted": false,
+      "deletedDate": null,
+      "revisionId": null,
+      "version": 1,
+      "historicalVersion": false,
+      "iconId": 268,
+      "quantity": {
+        "numericValue": 1,
+        "unitId": 3
+      },
+      "tags": null,
+      "barcode": "",
+      "type": "SAMPLE",
+      "templateId": 163841,
+      "templateVersion": 3,
+      "template": false,
+      "owner": {
+        "id": 3342339,
+        "username": "nhanlon",
+        "email": "neil.hanlon@hotmail.co.uk",
+        "firstName": "Neil",
+        "lastName": "Hanlon",
+        "homeFolderId": 34266,
+        "workbenchId": null,
+        "_links": []
+      },
+      "permittedActions": [
+        "UPDATE",
+        "CHANGE_OWNER"
+      ],
+      "subSampleAlias": "aliquot",
+      "subSamplesCount": 1,
+      "storageTempMin": {
+        "numericValue": 3,
+        "unitId": 8
+      },
+      "storageTempMax": {
+        "numericValue": 5,
+        "unitId": 8
+      },
+      "sampleSource": "LAB_CREATED",
+      "expiryDate": "2021-10-18",
+      "attachments": [],
+      "_links": [
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277964/image/1634645338173",
+          "rel": "image"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277964/thumbnail/1634645338173",
+          "rel": "thumbnail"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277964",
+          "rel": "self"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/sampleTemplates/1277964/icon/268",
+          "rel": "icon"
+        }
+      ]
+    },
+    {
+      "id": 1277962,
+      "globalId": "SA1277962",
+      "name": "Antibody_far",
+      "description": null,
+      "created": "2021-10-19T12:08:03.000Z",
+      "createdBy": "nhanlon",
+      "lastModified": "2021-10-19T12:08:02.883Z",
+      "modifiedBy": "nhanlon",
+      "modifiedByFullName": "Neil Hanlon",
+      "deleted": false,
+      "deletedDate": null,
+      "revisionId": null,
+      "version": 1,
+      "historicalVersion": false,
+      "iconId": 268,
+      "quantity": {
+        "numericValue": 1,
+        "unitId": 3
+      },
+      "tags": null,
+      "barcode": "",
+      "type": "SAMPLE",
+      "templateId": 163841,
+      "templateVersion": 3,
+      "template": false,
+      "owner": {
+        "id": 3342339,
+        "username": "nhanlon",
+        "email": "neil.hanlon@hotmail.co.uk",
+        "firstName": "Neil",
+        "lastName": "Hanlon",
+        "homeFolderId": 34266,
+        "workbenchId": null,
+        "_links": []
+      },
+      "permittedActions": [
+        "UPDATE",
+        "CHANGE_OWNER"
+      ],
+      "subSampleAlias": "aliquot",
+      "subSamplesCount": 1,
+      "storageTempMin": {
+        "numericValue": 3,
+        "unitId": 8
+      },
+      "storageTempMax": {
+        "numericValue": 5,
+        "unitId": 8
+      },
+      "sampleSource": "LAB_CREATED",
+      "expiryDate": "2022-10-19",
+      "attachments": [],
+      "_links": [
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277962/image/1634645282883",
+          "rel": "image"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277962/thumbnail/1634645282883",
+          "rel": "thumbnail"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277962",
+          "rel": "self"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/sampleTemplates/1277962/icon/268",
+          "rel": "icon"
+        }
+      ]
+    },
+    {
+      "id": 1277961,
+      "globalId": "SA1277961",
+      "name": "Antibody_soon",
+      "description": "<p>description text</p>",
+      "created": "2021-10-19T12:07:26.000Z",
+      "createdBy": "nhanlon",
+      "lastModified": "2021-10-19T12:07:25.710Z",
+      "modifiedBy": "nhanlon",
+      "modifiedByFullName": "Neil Hanlon",
+      "deleted": false,
+      "deletedDate": null,
+      "revisionId": null,
+      "version": 1,
+      "historicalVersion": false,
+      "iconId": 268,
+      "quantity": {
+        "numericValue": 1,
+        "unitId": 3
+      },
+      "tags": "aTag",
+      "barcode": "",
+      "type": "SAMPLE",
+      "templateId": 163841,
+      "templateVersion": 3,
+      "template": false,
+      "owner": {
+        "id": 3342339,
+        "username": "nhanlon",
+        "email": "neil.hanlon@hotmail.co.uk",
+        "firstName": "Neil",
+        "lastName": "Hanlon",
+        "homeFolderId": 34266,
+        "workbenchId": null,
+        "_links": []
+      },
+      "permittedActions": [
+        "UPDATE",
+        "CHANGE_OWNER"
+      ],
+      "subSampleAlias": "aliquot",
+      "subSamplesCount": 1,
+      "storageTempMin": {
+        "numericValue": 3,
+        "unitId": 8
+      },
+      "storageTempMax": {
+        "numericValue": 5,
+        "unitId": 8
+      },
+      "sampleSource": "LAB_CREATED",
+      "expiryDate": "2021-10-20",
+      "attachments": [],
+      "_links": [
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277961/image/1634645245710",
+          "rel": "image"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277961/thumbnail/1634645245710",
+          "rel": "thumbnail"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277961",
+          "rel": "self"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/sampleTemplates/1277961/icon/268",
+          "rel": "icon"
+        }
+      ]
+    },
+    {
+      "id": 1277963,
+      "globalId": "SA1277963",
+      "name": "Antibody_today",
+      "description": null,
+      "created": "2021-10-19T12:08:30.000Z",
+      "createdBy": "nhanlon",
+      "lastModified": "2021-10-19T12:08:30.390Z",
+      "modifiedBy": "nhanlon",
+      "modifiedByFullName": "Neil Hanlon",
+      "deleted": false,
+      "deletedDate": null,
+      "revisionId": null,
+      "version": 1,
+      "historicalVersion": false,
+      "iconId": 268,
+      "quantity": {
+        "numericValue": 1,
+        "unitId": 3
+      },
+      "tags": null,
+      "barcode": "",
+      "type": "SAMPLE",
+      "templateId": 163841,
+      "templateVersion": 3,
+      "template": false,
+      "owner": {
+        "id": 3342339,
+        "username": "nhanlon",
+        "email": "neil.hanlon@hotmail.co.uk",
+        "firstName": "Neil",
+        "lastName": "Hanlon",
+        "homeFolderId": 34266,
+        "workbenchId": null,
+        "_links": []
+      },
+      "permittedActions": [
+        "UPDATE",
+        "CHANGE_OWNER"
+      ],
+      "subSampleAlias": "aliquot",
+      "subSamplesCount": 1,
+      "storageTempMin": {
+        "numericValue": 3,
+        "unitId": 8
+      },
+      "storageTempMax": {
+        "numericValue": 5,
+        "unitId": 8
+      },
+      "sampleSource": "LAB_CREATED",
+      "expiryDate": null,
+      "attachments": [],
+      "_links": [
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277963/image/1634645310390",
+          "rel": "image"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277963/thumbnail/1634645310390",
+          "rel": "thumbnail"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/samples/1277963",
+          "rel": "self"
+        },
+        {
+          "link": "https://demos.researchspace.com/api/inventory/v1/sampleTemplates/1277963/icon/268",
+          "rel": "icon"
+        }
+      ]
+    }
+  ],
+  "_links": [
+    {
+      "link": "https://demos.researchspace.com/api/inventory/v1/samples?pageNumber=0&orderBy=name%20asc",
+      "rel": "self"
+    }
+  ]
+}
