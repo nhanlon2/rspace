@@ -2,11 +2,15 @@ package com.researchspace.exercise.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.researchspace.exercise.client.exception.BadRequestException;
+import com.researchspace.exercise.client.exception.SampleNotFoundException;
 import com.researchspace.exercise.resource.SampleDetails;
 import com.researchspace.exercise.resource.SampleResponse;
 import com.researchspace.exercise.resource.SampleSummary;
 import org.springframework.boot.jackson.JsonComponent;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
@@ -30,9 +34,17 @@ public class RSpaceClient {
     }
 
     public SampleDetails getSampleByID(String id) {
-        SampleDetails sampleDetails = restTemplate.getForObject(RSPACE_BASE_URL + "/" + id, SampleDetails.class);
-        sampleDetails.calculateLocation();
-        return sampleDetails;
+        try {
+            SampleDetails sampleDetails = restTemplate.getForObject(RSPACE_BASE_URL + "/" + id, SampleDetails.class);
+            sampleDetails.calculateLocation();
+            return sampleDetails;
+        } catch (HttpClientErrorException e) {
+            if(e.getStatusCode() == HttpStatus.NOT_FOUND) {
+                throw new SampleNotFoundException(id);
+            } else {
+                throw new BadRequestException(e);
+            }
+        }
     }
 
     public List<SampleSummary> getSampleSummaries() throws JsonProcessingException {
@@ -49,7 +61,7 @@ public class RSpaceClient {
                     }
                     LocalDate expiryDate = LocalDate.parse(summary.getExpiryDate());
                     long diff = ChronoUnit.DAYS.between(LocalDate.now(), expiryDate);
-                    return diff < days;
+                    return diff < days; // TODO should this be <= ?
                 }
         ).collect(Collectors.toList());
     }

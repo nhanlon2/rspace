@@ -3,6 +3,7 @@ package com.researchspace.exercise;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.researchspace.exercise.client.RSpaceClient;
+import com.researchspace.exercise.client.exception.SampleNotFoundException;
 import com.researchspace.exercise.resource.SampleDetails;
 import com.researchspace.exercise.resource.SampleSummary;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,9 +14,11 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.core.io.Resource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -116,7 +119,7 @@ public class RspaceApplicationIntegrationTests {
     }
 
     @Test
-    public void testHandlesException() throws Exception {
+    public void testHandlesGenricException() throws Exception {
         String rootCause = "bad stuff that should not be made public";
         doThrow(new RuntimeException(rootCause)).when(rSpaceClientMock).getSamples();
         MvcResult result = mvc.perform(get("/")
@@ -126,6 +129,18 @@ public class RspaceApplicationIntegrationTests {
         String content = result.getResponse().getContentAsString();
         assertThat(content, containsString("There is a problem with your request, please contact support"));
         assertThat(content, not(containsString(rootCause)));
+    }
+
+    @Test
+    public void testHandlesSampleNotFoundException() throws Exception {
+        SampleNotFoundException err = new SampleNotFoundException(SAMPLE_ID);
+        doThrow(err).when(rSpaceClientMock).getSampleByID(SAMPLE_ID);
+        MvcResult result = mvc.perform(get("/sampleDetails/" + SAMPLE_ID)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound())
+                .andReturn();
+        String content = result.getResponse().getContentAsString();
+        assertThat(content, containsString("Unable to find the sample with ID: " + SAMPLE_ID));
     }
 
 }

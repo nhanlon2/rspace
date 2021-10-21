@@ -23,6 +23,7 @@ public class SampleDetails {
         StringBuilder locationStringBuilder = new StringBuilder();
         for (SubSample subSample : subSamples) {
             for (Container container : subSample.getParentContainers()) {
+                locationStringBuilder.append(" PARENT CONTAINER: ");
                 generateContainerLocation(container, locationStringBuilder);
             }
         }

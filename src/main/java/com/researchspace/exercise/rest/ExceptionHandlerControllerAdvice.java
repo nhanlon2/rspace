@@ -24,9 +24,9 @@ public class ExceptionHandlerControllerAdvice {
             log.error(makeMessage(exception), exception);
             userErrorMessage = "There is a problem with your request, please contact support.";
         } else {
-            userErrorMessage = "There is a problem with your request, please try again later.";
             log.warn(makeMessage(exception));
             log.debug(makeMessage(exception), exception);
+            userErrorMessage = exception.getMessage();
         }
         return new ResponseEntity<>(userErrorMessage, responseStatus);
     }

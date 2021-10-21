@@ -3,6 +3,7 @@ package com.researchspace.exercise.client;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.researchspace.exercise.client.exception.SampleNotFoundException;
 import com.researchspace.exercise.resource.SampleDetails;
 import com.researchspace.exercise.resource.SampleResponse;
 import com.researchspace.exercise.resource.SampleSummary;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.client.MockRestServiceServer;
 
@@ -21,12 +23,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
+import static org.springframework.test.web.client.response.MockRestResponseCreators.withStatus;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
 @RestClientTest
@@ -97,6 +102,15 @@ public class RSpaceClientTest {
         SampleDetails sampleDetails = testee.getSampleByID(SAMPLE_ID);
         assertEquals("Antibody_expired", sampleDetails.getName());
         assertEquals(" Neils_Container  6560 4 1 WB nhanlon null WB nhanlon null", sampleDetails.getLocation());
+    }
+
+    @Test
+    public void testGetSampleByIDNotFound() {
+        server.expect(requestTo(RSPACE_BASE_URL + "/" + SAMPLE_ID))
+                .andExpect(method(HttpMethod.GET)).andRespond(withStatus(HttpStatus.NOT_FOUND));
+        SampleNotFoundException exception = assertThrows(SampleNotFoundException.class,
+                () -> testee.getSampleByID(SAMPLE_ID));
+        assertEquals("Unable to find the sample with ID: "+SAMPLE_ID, exception.getMessage());
     }
 
 }
