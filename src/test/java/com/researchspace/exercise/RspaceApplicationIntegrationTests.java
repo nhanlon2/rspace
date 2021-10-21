@@ -119,7 +119,7 @@ public class RspaceApplicationIntegrationTests {
     }
 
     @Test
-    public void testHandlesGenricException() throws Exception {
+    public void testHandlesGenericException() throws Exception {
         String rootCause = "bad stuff that should not be made public";
         doThrow(new RuntimeException(rootCause)).when(rSpaceClientMock).getSamples();
         MvcResult result = mvc.perform(get("/samples")
