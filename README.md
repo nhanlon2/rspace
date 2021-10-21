@@ -1,5 +1,7 @@
 # rspace exercise
 
+This application runs a basic Rest interface that shows some data about user samples in a simple json format.
+
 ###run the tests : `./gradlew clean test`
 
 ###run the application : `./gradlew bootRun`
@@ -17,7 +19,7 @@ e.g `http://localhost:8080/sampleSummaries?expiresInLessThan=7`
 
 e.g `http://localhost:8080/sampleDetails/1277977` (this displays some container nesting)
 
-Shows all details of a single sample. Some location information has been generated to help find the sample.
+Shows a few selected details of a single sample. Some location information has been generated to help find the sample.
 
 //TODO
  - Determine if the users find the `expiryWithinDays` query useful or confusing.
@@ -27,11 +29,11 @@ Shows all details of a single sample. Some location information has been generat
 
 ###Error handling and logging
 
-There is a catch all error handler `ExceptionHandlerControllerAdvice`. I developed this pattern for my team which was having a problem
+There is a catch all error handler `ExceptionHandlerControllerAdvice`. I developed this pattern for my team when they were having a problem
 with errors. They were being logged multiple times per error; logging was sometimes at `error` level for predictable events such as
 an item not being found. Exception details that exposed our tech stack were also leaking to clients of the Rest Api.
 
 The error handler looks for annotations on the Exceptions it catches. If they match Http Response Statuses then this is handled
 as a predicted error (unless the status is 500!), logged as `warn` and the message is trusted to be displayed to the user. Otherwise, they are unexpected exceptions
 and handled as internal server errors, logged at `error` and user gets a generic apology message. The only predictable error I could forsee in the
-exercise here was sample not found. I created an Exception for this with an `@ResponseStatus(HttpStatus.NOT_FOUND)` annotation.
+exercise here was "sample not found". I created an Exception for this with an `@ResponseStatus(HttpStatus.NOT_FOUND)` annotation.
