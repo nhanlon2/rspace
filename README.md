@@ -6,16 +6,16 @@
 
 ###Rest Api:
 
-`http://localhost:8080/` - shows all data belonging to user
+`http://localhost:8080/samples` - shows all data belonging to user
 
-`http://localhost:8080/sampleSummaries` - shows selected fields of samples belonging to user
-takes an (optional) query param `expiresInLessThan` with the value being days:
+`http://localhost:8080/sampleSummaries` - shows selected fields of samples belonging to user.
+Takes an (optional) query param `expiresInLessThan` with the value being days:
 
 e.g `http://localhost:8080/sampleSummaries?expiresInLessThan=7`
 
 `http://localhost:8080/sampleDetails/{id}` - takes a path parameter which is the id of the sample. 
 
-e.g `http://localhost:8080/sampleDetails/1277964` (this displays some container nesting)
+e.g `http://localhost:8080/sampleDetails/1277977` (this displays some container nesting)
 
 Shows all details of a single sample. Some location information has been generated to help find the sample.
 

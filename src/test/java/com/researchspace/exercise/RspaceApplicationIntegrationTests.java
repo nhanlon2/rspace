@@ -69,7 +69,7 @@ public class RspaceApplicationIntegrationTests {
 
     @Test
     public void testGetSamples() throws Exception {
-        MvcResult result = mvc.perform(get("/")
+        MvcResult result = mvc.perform(get("/samples")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content()
@@ -122,7 +122,7 @@ public class RspaceApplicationIntegrationTests {
     public void testHandlesGenricException() throws Exception {
         String rootCause = "bad stuff that should not be made public";
         doThrow(new RuntimeException(rootCause)).when(rSpaceClientMock).getSamples();
-        MvcResult result = mvc.perform(get("/")
+        MvcResult result = mvc.perform(get("/samples")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isInternalServerError())
                 .andReturn();

@@ -46,17 +46,23 @@ public class RSpaceClientTest {
     private MockRestServiceServer server;
     @Value(value = "classpath:samples.json")
     private Resource samplesJsonFile;
+    @Value(value = "classpath:zero_samples.json")
+    private Resource zeroSamplesJsonFile;
     @Value(value = "classpath:sampleByID.json")
     private Resource sampleByIDJsonFile;
     private String samplesJson;
     private String sampleDetailsJson;
+    private String zeroSamplesJson;
 
     @BeforeEach
     public void setUp() throws IOException {
         Path toFilePath = Paths.get(samplesJsonFile.getURI());
         samplesJson = Files.readString(toFilePath);
+        toFilePath = Paths.get(zeroSamplesJsonFile.getURI());
+        zeroSamplesJson = Files.readString(toFilePath);
         toFilePath = Paths.get(sampleByIDJsonFile.getURI());
         sampleDetailsJson = Files.readString(toFilePath);
+
     }
 
     @Test
@@ -65,6 +71,16 @@ public class RSpaceClientTest {
                 .andExpect(method(HttpMethod.GET)).andRespond(withSuccess(samplesJson, MediaType.APPLICATION_JSON));
         JsonNode result = testee.getSamples();
         assertNotNull(result);
+        server.verify();
+    }
+
+    @Test
+    public void testGetZeroSamples() {
+        server.expect(requestTo(RSPACE_BASE_URL))
+                .andExpect(method(HttpMethod.GET)).andRespond(withSuccess(zeroSamplesJson, MediaType.APPLICATION_JSON));
+        JsonNode result = testee.getSamples();
+        assertNotNull(result);
+        assertEquals(0, result.get("totalHits").asInt());
         server.verify();
     }
 
@@ -101,7 +117,7 @@ public class RSpaceClientTest {
                 .andExpect(method(HttpMethod.GET)).andRespond(withSuccess(sampleDetailsJson, MediaType.APPLICATION_JSON));
         SampleDetails sampleDetails = testee.getSampleByID(SAMPLE_ID);
         assertEquals("Antibody_expired", sampleDetails.getName());
-        assertEquals(" Neils_Container  6560 4 1 WB nhanlon null WB nhanlon null", sampleDetails.getLocation());
+        assertEquals(" PARENT CONTAINER:  Neils_Container  6560 4 1 WB nhanlon null PARENT CONTAINER:  WB nhanlon null", sampleDetails.getLocation());
     }
 
     @Test

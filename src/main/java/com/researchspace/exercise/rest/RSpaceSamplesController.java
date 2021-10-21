@@ -24,7 +24,7 @@ public class RSpaceSamplesController {
         this.client = client;
     }
 
-    @GetMapping("/")
+    @GetMapping("/samples")
     public ResponseEntity<JsonNode> index() {
 
         return ok(client.getSamples());
